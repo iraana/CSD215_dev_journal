@@ -2,9 +2,8 @@
 ## 1. In-memory storage (temporary):
 
    While your program runs, you use a data structure like an `ArrayList` to hold your list of tasks.
-      
-      - This is fast and easy to modify.
-      - But it disappears when the program ends — it lives only in RAM.
+   - This is fast and easy to modify.
+   - But it disappears when the program ends — it lives only in RAM.
 ## 2. Persistent storage (permanent):
 
    To make the list survive between runs, you save (or “serialize”) it to a file on the disk — something like `tasks.txt  .

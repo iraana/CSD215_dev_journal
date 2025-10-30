@@ -1,4 +1,4 @@
-# Programming ParadigmsOverview
+# Programming Paradigms Overview
 
 ## Programming Paradigm
 - A **programming paradigm** is a set of techniques and constraints to write, read, maintain, and reuse complex software.

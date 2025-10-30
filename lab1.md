@@ -9,3 +9,7 @@
    To make the list survive between runs, you save (or “serialize”) it to a file on the disk — something like `tasks.txt. 
    - When the app starts, you read that file and rebuild your in-memory list.
    - When the app exits or when you change the list, you write the current list back to the file.
+
+# File Read/Write
+https://www.w3schools.com/java/java_files.asp
+

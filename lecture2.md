@@ -71,29 +71,18 @@ public static double hypotenuse2(double a, double b) {
 
 ## **Functional Core, Imperative Shell**
 
-  -----------------------------------------------------------------------
-  Part                  Description
-  --------------------- -------------------------------------------------
-  **Functional Core**   Immutable data + pure functions. Application
-                        logic lives here.
+  **Functional Core** - Immutable data + pure functions. Application logic lives here.
 
-  **Imperative Shell**  Coordinates external interactions (I/O, DB,
-                        files). Controls sequencing.
-  -----------------------------------------------------------------------
-
-
+  **Imperative Shell** - Coordinates external interactions (I/O, DB, files). Controls sequencing.
+ 
 ## **Recognizing Data, Calculations, and Actions**
 
-  --------------------------------------------------------------------------
-  Type              Key Question                           Notes
-  ----------------- -------------------------------------- -----------------
-  **Data**          What does my program need to know?     Facts only.
 
-  **Calculation**   What does my program need to decide?   Pure logic.
+  **Data**  ->  What does my program need to know?    ->  Facts only.
 
-  **Action**        When and in what order should things   Has side effects.
-                    happen?                                
-  --------------------------------------------------------------------------
+  **Calculation**   ->  What does my program need to decide?   ->  Pure logic.
+
+  **Action**     ->  When and in what order should things happen?  ->  Has side effects.                                
 
 
 ## **Example: CouponDog**
@@ -151,12 +140,10 @@ Since `calcPayout` calls `sendPayout`, it's also an action. And anything calling
 
 ## **Function Inputs and Outputs**
 
-  Type                   Description
-
-  **Explicit Inputs**    Parameters
-  **Explicit Outputs**   Return values
-  **Implicit Inputs**    Reading globals, external files
-  **Implicit Outputs**   Modifying globals, printing, writing files
+  **Explicit Inputs**  = Parameters
+  **Explicit Outputs**  = Return values
+  **Implicit Inputs**  = Reading globals, external files
+  **Implicit Outputs** = Modifying globals, printing, writing files
 
 > Any implicit input or output makes a function an **action**.
 

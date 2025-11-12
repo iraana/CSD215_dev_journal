@@ -152,7 +152,7 @@ Since `calcPayout` calls `sendPayout`, it's also an action. And anything calling
 ## **Function Inputs and Outputs**
 
   Type                   Description
-  ---------------------- --------------------------------------------
+
   **Explicit Inputs**    Parameters
   **Explicit Outputs**   Return values
   **Implicit Inputs**    Reading globals, external files

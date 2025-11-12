@@ -188,7 +188,6 @@ public static void calcCartTotal() {
 }
 ```
 
-------------------------------------------------------------------------
 
 ## **Converting Implicit I/O to Explicit**
 
@@ -220,10 +219,3 @@ Now `addItem` is a pure calculation.
 4.  **Use immutability and explicit I/O**
 
 
-## **Helpful Heuristic**
-
-  Type              Question
-  ----------------- ----------------------------------------------
-  **Data**          What does my program need to know?
-  **Calculation**   What does my program need to decide?
-  **Action**        When and in what order should things happen?

@@ -91,10 +91,8 @@ public static double hypotenuse2(double a, double b) {
 -   Subscribers with \>10 referrals get better coupons.
 
 Functional approach: 
-1. **Data:** Subscriber info, referral count,
-coupon data.
-2. **Calculations:** Determine coupon rank, prepare email
-list.
+1. **Data:** Subscriber info, referral count, coupon data.
+2. **Calculations:** Determine coupon rank, prepare email list.
 3. **Actions:** Actually send the emails.
 
 Separation makes it easier to test calculations independently of
@@ -140,10 +138,10 @@ Since `calcPayout` calls `sendPayout`, it's also an action. And anything calling
 
 ## **Function Inputs and Outputs**
 
-**Explicit Inputs**  = Parameters
-**Explicit Outputs**  = Return values
-**Implicit Inputs**  = Reading globals, external files
-**Implicit Outputs** = Modifying globals, printing, writing files
+- **Explicit Inputs**  = Parameters
+- **Explicit Outputs**  = Return values
+- **Implicit Inputs**  = Reading globals, external files
+- **Implicit Outputs** = Modifying globals, printing, writing files
 
 > Any implicit input or output makes a function an **action**.
 

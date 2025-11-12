@@ -140,10 +140,10 @@ Since `calcPayout` calls `sendPayout`, it's also an action. And anything calling
 
 ## **Function Inputs and Outputs**
 
-  **Explicit Inputs**  = Parameters
-  **Explicit Outputs**  = Return values
-  **Implicit Inputs**  = Reading globals, external files
-  **Implicit Outputs** = Modifying globals, printing, writing files
+**Explicit Inputs**  = Parameters
+**Explicit Outputs**  = Return values
+**Implicit Inputs**  = Reading globals, external files
+**Implicit Outputs** = Modifying globals, printing, writing files
 
 > Any implicit input or output makes a function an **action**.
 

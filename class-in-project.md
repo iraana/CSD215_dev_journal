@@ -26,5 +26,6 @@
 `setOnDoubleClick(...)` → connects table row double-clicks to an action from the ViewModel.
 
 Design
-<img width="319" height="200" alt="image" src="https://github.com/user-attachments/assets/4dbe2193-05c1-486a-941a-bed5a046b3b9" />
+
+<img width="819" height="600" alt="image" src="https://github.com/user-attachments/assets/4dbe2193-05c1-486a-941a-bed5a046b3b9" />
 

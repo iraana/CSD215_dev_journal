@@ -14,3 +14,10 @@
 - Singleton means a design pattern where only one instance of a class exists in the entire application.
 - ViewModel (MVVM) pattern: the view gets all data and actions from a separate container (ViewModel) so the UI just displays info and triggers callbacks.
 - Each view has a pure function that takes a ViewModel and returns a JavaFX Node; the view just builds the UI from the data without handling logic.
+- Uses separate types for Unvalidated vs. Validated data so the compiler forces validation.
+- Even if both types have the same fields, they’re different types, so you can’t save unvalidated data by mistake.
+- This pattern uses the type system to prevent errors before the program even runs.
+- The helpers package provides useful tools:
+`NumberField` → a JavaFX input field that only accepts numbers.
+`createColumn(...)` → shortcut for adding table columns without repeating boilerplate code.
+`setOnDoubleClick(...)` → connects table row double-clicks to an action from the ViewModel.

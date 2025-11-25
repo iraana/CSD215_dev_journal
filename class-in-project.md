@@ -20,5 +20,7 @@
 - The helpers package provides useful tools:
 
 `NumberField` → a JavaFX input field that only accepts numbers.
+
 `createColumn(...)` → shortcut for adding table columns without repeating boilerplate code.
+
 `setOnDoubleClick(...)` → connects table row double-clicks to an action from the ViewModel.

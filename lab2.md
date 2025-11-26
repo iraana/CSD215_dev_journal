@@ -1,1 +1,2 @@
-
+- Sealed interface
+- Does supplier have to be unique as Category?

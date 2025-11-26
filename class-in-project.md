@@ -39,4 +39,7 @@ Design
 - In ProductEditView we need to add select Supplier
 - Add list of Categories/Suppliers for choosing ( need id, name, list)
 - Create choiceBox -> example in EditView.
-- 
+- ProductControler need SupllierREpository, CategoryRepository to grabb all values
+- Add it in constructor, use in showProducts
+- Need to add check for categoryId/supplierId in ProductValidator in validate() -> to be able to check have to update Validated/Unvalidated data in Product
+- Then in productRepo in query for update add SupplierID -> and setInt that added value.

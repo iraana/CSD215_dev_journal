@@ -16,3 +16,11 @@ aws ec2 create-vpc \
 >     --availability-zone us-east-1a \
 >     --tag-specifications 'ResourceType=subnet,Tags=[{Key=Name,Value=csd215-subnet-private}]'
 ```
+
+3. Enable auto-assign public IPv4 address on launch
+
+```
+aws ec2 modify-subnet-attribute \
+>     --subnet-id subnet-0d6efb89541fd8a15 \
+>     --map-public-ip-on-launch
+```

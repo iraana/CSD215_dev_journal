@@ -18,6 +18,6 @@ public sealed interface Result permits Pass, Fail { }
   
 <img width="1345" height="499" alt="image" src="https://github.com/user-attachments/assets/de1db9df-e7c3-4950-acbf-628c394d19d7" />
 
-- no need for `    requires sales;` in `module sales  `
+- no need for `requires sales;` in `module sales`
 
   

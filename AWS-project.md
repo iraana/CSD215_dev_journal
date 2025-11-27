@@ -25,6 +25,9 @@ aws ec2 modify-subnet-attribute \
 >     --map-public-ip-on-launch
 ```
 Explanation:
+
 `aws ec2 modify-subnet-attribute` This is the base command for modifying subnet attributes.
+
 `--subnet-id subnet-id` Replace subnet-id with the actual ID of the subnet you want to modify.
+
 `--map-public-ip-on-launch` This flag enables the auto-assignment of public IPv4 addresses for instances launched in that subnet.

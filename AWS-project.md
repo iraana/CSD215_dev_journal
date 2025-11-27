@@ -4,7 +4,9 @@
 - csd215-rt-private = "RouteTableId": "rtb-058777c1f65825bf2"
 - "AssociationId": "rtbassoc-0a0de5cb6f87600a2" // for private with table 
 - csd215-rt-public = "RouteTableId": "rtb-01cb3c4a96883f5cd"
-- "AssociationId": "rtbassoc-067051badad7f523c"  // for public 
+- "AssociationId": "rtbassoc-067051badad7f523c"  // for public
+- "InternetGatewayId": "igw-053cda6f356cdc81f"
+- $DDB_ENDPOINT_ID : "VpcEndpointId": "vpce-01a65c331f5972989",  // for dynano
 
 
 1. Create the VPC
@@ -63,3 +65,48 @@ aws ec2 associate-route-table \
     --subnet-id subnet-051e41c5c17877374 \
     --route-table-id rtb-058777c1f65825bf2
 ```
+
+5. Create an Internet Gateway
+```
+aws ec2 create-internet-gateway \
+    --tag-specifications 'ResourceType=internet-gateway,Tags=[{Key=Name,Value=csd215-igw}]'
+```
+
+Attach the IGW to the VPC:
+
+```
+aws ec2 attach-internet-gateway \
+>     --vpc-id vpc-0e920d7fe9b676f31 \
+>     --internet-gateway-id igw-053cda6f356cdc81f
+```
+
+6. Default route for the public subnet to the IGW
+
+```
+aws ec2 create-route \
+    --route-table-id rtb-01cb3c4a96883f5cd \
+    --destination-cidr-block 0.0.0.0/0 \
+    --gateway-id igw-053cda6f356cdc81f
+```
+
+7. Create a VPC Endpoint Gateway to DynamoDB
+
+https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-ddb.html
+https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/privatelink-interface-endpoints.html
+
+```
+aws ec2 create-vpc-endpoint \
+    --vpc-id vpc-0e920d7fe9b676f31 \
+    --vpc-endpoint-type Gateway \
+    --service-name com.amazonaws.us-east-1.dynamodb \
+    --route-table-ids rtb-058777c1f65825bf2 rtb-01cb3c4a96883f5cd \
+    --tag-specifications 'ResourceType=vpc-endpoint,Tags=[{Key=Name,Value=csd215-dynamodb-endpoint}]'
+```
+
+Verify the Endpoint
+
+```
+aws ec2 describe-vpc-endpoints --vpc-endpoint-ids $DDB_ENDPOINT_ID
+```
+
+

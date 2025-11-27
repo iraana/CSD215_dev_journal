@@ -1,10 +1,10 @@
-$VPC_ID = "vpc-0e920d7fe9b676f31"
-csd215-subnet-private = "SubnetId": "subnet-051e41c5c17877374"
-csd215-subnet-public = "SubnetId": "subnet-0d6efb89541fd8a15"
-csd215-rt-private = "RouteTableId": "rtb-058777c1f65825bf2"
-"AssociationId": "rtbassoc-0a0de5cb6f87600a2" // for private with table 
-csd215-rt-public = "RouteTableId": "rtb-01cb3c4a96883f5cd"
-"AssociationId": "rtbassoc-067051badad7f523c"  // for public 
+- $VPC_ID = "vpc-0e920d7fe9b676f31"
+- csd215-subnet-private = "SubnetId": "subnet-051e41c5c17877374"
+- csd215-subnet-public = "SubnetId": "subnet-0d6efb89541fd8a15"
+- csd215-rt-private = "RouteTableId": "rtb-058777c1f65825bf2"
+- "AssociationId": "rtbassoc-0a0de5cb6f87600a2" // for private with table 
+- csd215-rt-public = "RouteTableId": "rtb-01cb3c4a96883f5cd"
+- "AssociationId": "rtbassoc-067051badad7f523c"  // for public 
 
 
 1. Create the VPC

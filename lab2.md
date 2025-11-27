@@ -13,4 +13,9 @@ public sealed interface Result permits Pass, Fail { }
 - If valid → save to repository
 - If invalid → return to the form with error messages
 - Repositories handle low-level database operations(Insert, Update, Delete, Read)
+- java: cyclic dependence involving sales
+
+  
+<img width="1345" height="499" alt="image" src="https://github.com/user-attachments/assets/de1db9df-e7c3-4950-acbf-628c394d19d7" />
+
   

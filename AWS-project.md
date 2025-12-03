@@ -117,11 +117,17 @@ run `aws dynamodb create-table help` to open the full documentation.
 https://docs.aws.amazon.com/cli/latest/reference/dynamodb/create-table.html
 
 Table name: dice-rolls  `--table-name <value>`
+
 Billing mode: On-Demand (PAY_PER_REQUEST) `--billing-mode <value>`
+
 Attributes: ` --attribute-definitions <value>`
+
 source (String)
+
 timestamp (Number)
+
 Primary key:
+
 <img width="455" height="141" alt="image" src="https://github.com/user-attachments/assets/6dd199f2-2af2-4738-8be1-b4c28b2b78a4" />
 
 Partition key: source

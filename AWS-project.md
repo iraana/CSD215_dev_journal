@@ -7,6 +7,9 @@
 - "AssociationId": "rtbassoc-067051badad7f523c"  // for public
 - "InternetGatewayId": "igw-053cda6f356cdc81f"
 - $DDB_ENDPOINT_ID : "VpcEndpointId": "vpce-01a65c331f5972989",  // for dynano
+- "TableId": "8ff61b82-7fc9-4b32-a7e4-8ee04fdc7f01" // dice-rolls
+- "GroupId": "sg-088e04f68667f70c1" // security-group --group-name csd215-ec2-sg
+- "InstanceProfileId": "AIPASVODC3Z2EIWMGE5A7"
 
 
 1. Create the VPC
@@ -133,5 +136,20 @@ Primary key:
 Partition key: source
 
 Sort key: timestamp
+---
+```
+aws dynamodb create-table \
+    --table-name dice-rolls \
+    --billing-mode PAY_PER_REQUEST \
+    --attribute-definitions \
+        AttributeName=source,AttributeType=S \
+        AttributeName=timestamp,AttributeType=N \
+    --key-schema \
+        AttributeName=source,KeyType=HASH \
+        AttributeName=timestamp,KeyType=RANGE
+```
 
+9. Create a security group within your VPC
+
+https://docs.aws.amazon.com/cli/latest/reference/ec2/create-security-group.html
 

@@ -125,6 +125,7 @@ Primary key:
 <img width="455" height="141" alt="image" src="https://github.com/user-attachments/assets/6dd199f2-2af2-4738-8be1-b4c28b2b78a4" />
 
 Partition key: source
+
 Sort key: timestamp
 
 

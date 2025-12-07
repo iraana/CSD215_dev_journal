@@ -10,6 +10,9 @@
 - "TableId": "8ff61b82-7fc9-4b32-a7e4-8ee04fdc7f01" // dice-rolls
 - "GroupId": "sg-088e04f68667f70c1" // security-group --group-name csd215-ec2-sg
 - "InstanceProfileId": "AIPASVODC3Z2EIWMGE5A7"
+- Instance Id : "i-0871790be966d8e05"
+- "GroupId": "sg-0ae0946176c7fa582", // security group for lamnda
+- 
 
 
 1. Create the VPC
@@ -152,4 +155,33 @@ aws dynamodb create-table \
 9. Create a security group within your VPC
 
 https://docs.aws.amazon.com/cli/latest/reference/ec2/create-security-group.html
+
+10. Launch EC2 Instance
+
+https://docs.aws.amazon.com/cli/latest/reference/ec2/run-instances.html
+```
+aws ec2 run-instances \
+    --image-id ami-0fa3fe0fa7920f68e \
+    --count 1 \
+    --instance-type t2.nano \
+    --key-name csd215-keypair \
+    --iam-instance-profile Name=csd215-instance-profile \
+    --security-group-ids sg-088e04f68667f70c1 \
+    --subnet-id subnet-0d6efb89541fd8a15 \
+    --associate-public-ip-address \
+    --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=csd215-flask-instance}]' \
+    --user-data file://resources/user_data.sh
+```
+
+11. Lambda function
+```
+aws lambda create-function \
+  --function-name csd215-lambda \
+  --runtime python3.9 \
+  --role arn:aws:iam::183482113652:role/LabRole \
+  --handler lambda_app.main \
+  --vpc-config SubnetIds=subnet-051e41c5c17877374,SecurityGroupIds=sg-0ae0946176c7fa582 \
+  --zip-file fileb://resources/lambda_placeholder.zip
+```
+
 

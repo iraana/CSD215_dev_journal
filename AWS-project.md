@@ -184,4 +184,5 @@ aws lambda create-function \
   --zip-file fileb://resources/lambda_placeholder.zip
 ```
 
+<img width="1470" height="750" alt="image" src="https://github.com/user-attachments/assets/467937f1-d1c1-4c06-b835-eeaa77379006" />
 

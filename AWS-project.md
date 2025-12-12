@@ -215,3 +215,15 @@ Lambda cost (monthly): 0.62 USD
 1 instances x 0.0058 USD On Demand hourly cost x 730 hours in a month = 4.234000 USD
 On-Demand instances (monthly): 4.234000 USD
 ```
+14. EC2 vs Lambda function
+```
+EC2: 1 instances x 0.0058 USD On Demand hourly cost x 730 hours in a month = 4.234000 USD/month
+Lamda:
+Monthly request charge - 1,000,000 requests x 0.0000002 USD = 0.20 USD/month
+Monthly compute charges - 25,000 GB-s x 0.0000166667 USD = 0.42 USD/month
+Lambda cost (monthly): 0.62 USD
+Price for one requesr for Lambda : 0.62 / 1000000 = 0.00000062 USD/request
+So, (EC2 montly cost)/(Lambda cost per request) = 4.234000 / 0.00000062 = 6,829,032.2581 requests/month
+Lamda function can handle roughly 6.8 million requests per month before it becomes more expensive than running the t2.nano EC2 instance
+```
+

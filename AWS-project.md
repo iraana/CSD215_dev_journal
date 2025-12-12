@@ -188,3 +188,30 @@ aws lambda create-function \
 <img width="1470" height="843" alt="image" src="https://github.com/user-attachments/assets/e1d9d843-130c-43bf-b08f-785bc82df35f" />
 
 
+12. Lambda cost calculation 
+```
+Unit conversions
+Amount of memory allocated: 128 MB x 0.0009765625 GB in a MB = 0.125 GB
+Amount of ephemeral storage allocated: 512 MB x 0.0009765625 GB in a MB = 0.5 GB
+Pricing calculations
+1,000,000 requests x 200 ms x 0.001 ms to sec conversion factor = 200,000.00 total compute (seconds)
+0.125 GB x 200,000.00 seconds = 25,000.00 total compute (GB-s)
+Tiered price for: 25,000.00 GB-s
+25,000 GB-s x 0.0000166667 USD = 0.42 USD
+Total tier cost = 0.4167 USD (monthly compute charges)
+Monthly compute charges: 0.42 USD
+1,000,000 requests x 0.0000002 USD = 0.20 USD (monthly request charges)
+Monthly request charges: 0.20 USD
+0.50 GB - 0.5 GB (no additional charge) = 0.00 GB billable ephemeral storage per function
+Monthly ephemeral storage charges: 0 USD
+0.42 USD + 0.20 USD = 0.62 USD
+Lambda cost (monthly): 0.62 USD
+```
+! without free tier
+
+13. EC2 cost
+
+```
+1 instances x 0.0058 USD On Demand hourly cost x 730 hours in a month = 4.234000 USD
+On-Demand instances (monthly): 4.234000 USD
+```
